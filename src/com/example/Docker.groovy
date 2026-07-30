@@ -1,4 +1,4 @@
-#!/user/bin/env groovy
+#!/usr/bin/env groovy
 
 package com.example
 
@@ -17,7 +17,7 @@ class Docker implements Serializable {
 
     def dockerLogin(){
         script.withCredentials([script.usernamePassword(credentialsId: 'docker-hub-repo', passwordVariable: 'PASSWORD', usernameVariable: 'USERNAME')]) {
-            script.sh "echo '${script.PASSWORD}' | docker login -u '${script.USERNAME}' --password-stdin"
+            script.sh "echo '${PASSWORD}' | docker login -u '${USERNAME}' --password-stdin"
         }
     }
 
